@@ -1,6 +1,6 @@
 <script>
     import FundingStage from "../components/FundingStage.svelte";
-    import flowfundContract from "../constants";
+    import { contract } from "../stores/user";
     let currentStage = 1;
     let stages = [
         {
@@ -30,8 +30,8 @@
     };
 
     const createButtonClicked = () => {
-        console.log(flowfundContract);
-        $flowfundContract.methods.getCampaigns().call();
+        console.log(contract);
+        $contract.methods.getCampaigns().call();
     }
 
 </script>
