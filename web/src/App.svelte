@@ -19,8 +19,6 @@
         M.AutoInit();
         campaigns.set(devCampaigns);
     });
-
-
     document.title = "Flowfund - Decentralized Crowdfunding!";
 
     const routes = {

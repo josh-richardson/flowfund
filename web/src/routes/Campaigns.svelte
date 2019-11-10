@@ -1,5 +1,5 @@
 <script>
-    import {profile, web3, flowfundContract} from '../stores/user';
+    import {profile, web3, contract} from '../stores/user';
     import {campaigns} from '../stores/application';
     import {onMount} from 'svelte';
     import CampaignCard from "../components/CampaignCard.svelte";
@@ -7,9 +7,9 @@
     onMount(async () => {
         if ($profile) {
             console.log($profile);
-            console.log($flowfundContract);
+            console.log($contract);
 
-            var result = await $flowfundContract.methods.getCampaigns().call();
+            var result = await $contract.methods.getCampaigns().call();
             console.log(result);
         }
     });

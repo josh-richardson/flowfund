@@ -44,7 +44,7 @@
             const web3 = new Web3(window.ethereum, null, {});
             const accounts = await window.ethereum.enable();
             User.profile.set({ethereum: {account: accounts[0]}, arweave: {wallet: validatedWallet, account: validatedAccount}});
-            User.flowfundContract.set(new web3.eth.Contract(FLOWFUND_ABI, FLOWFUND_ADDRESS_DEV, {defaultAccount: accounts[0]}));
+            User.contract.set(new web3.eth.Contract(FLOWFUND_ABI, FLOWFUND_ADDRESS_DEV, {defaultAccount: accounts[0]}));
             User.web3.set(web3);
             push("/");
             Materialize.toast({
